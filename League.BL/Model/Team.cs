@@ -9,6 +9,7 @@ namespace League.BL.Model
 {
     public class Team
     {
+        //TODO make internal
         internal Team(int stamnummer, string naam)
         {
             ZetStamnummer(stamnummer);
@@ -22,13 +23,25 @@ namespace League.BL.Model
         {
             return _spelers.AsReadOnly();
         }
+        public bool HeeftSpeler(Speler speler)
+        {
+            return _spelers.Contains(speler);
+        }
         public void VoegSpelerToe(Speler speler)
         {
-
+            if (speler == null) throw new TeamException("voegspelertoe - speler is null");
+            if (_spelers.Contains(speler)) throw new TeamException("Voegspelertoe - speler bestaat reeds");
+            _spelers.Add(speler);
+            if (speler.Team != this)
+                speler.ZetTeam(this);
         }
         public void VerwijderSpeler(Speler speler)
         {
-
+            if (speler == null) throw new TeamException("verwijderspeler - speler is null");
+            if (!_spelers.Contains(speler)) throw new TeamException("Verwijderspeler - speler bestaat niet");
+            _spelers.Remove(speler);
+            if (speler.Team == this)
+                speler.VerwijderTeam();
         }
         public void ZetStamnummer(int stamnummer)
         {
@@ -44,6 +57,17 @@ namespace League.BL.Model
         {
             if (string.IsNullOrWhiteSpace(naam)) throw new TeamException("ZetBijnaam");
             Bijnaam = naam.Trim();
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Team team &&
+                   Stamnummer == team.Stamnummer;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Stamnummer);
         }
     }
 }

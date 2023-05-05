@@ -20,9 +20,26 @@ namespace League.BL.Model
         public int? Rugnummer { get;private set; }
         public int? Lengte { get;private set; }
         public int? Gewicht { get;private set; }
+        public void VerwijderTeam()
+        {
+            if (Team== null) { throw new SpelerException("verwijdertema - geen team"); }
+            if (Team.HeeftSpeler(this))
+                Team.VerwijderSpeler(this);
+            Team = null;
+        }
         public void ZetTeam(Team team)
         {
-
+            if (team == null) throw new SpelerException("zetteam- team is null");
+            if (Team == team) throw new SpelerException("zetteam - zelfde team");
+            if (Team != null)
+            {
+                if (Team.HeeftSpeler(this)) Team.VerwijderSpeler(this);
+            }
+            if (!team.HeeftSpeler(this))
+            {
+                Team = team;
+                team.VoegSpelerToe(this);
+            }
         }
         public void ZetNaam(string naam)
         {
@@ -48,6 +65,17 @@ namespace League.BL.Model
         {
             if ((rugnummer <= 0) || (rugnummer > 99)) throw new SpelerException("ZetRugnummer");
             Rugnummer=rugnummer;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Speler speler &&
+                   Id == speler.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
         }
     }
 }

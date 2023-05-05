@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "League.BL", "League.BL\League.BL.csproj", "{3D74E726-4086-4E8D-902F-3A1AA368F39F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "League.BL", "League.BL\League.BL.csproj", "{3D74E726-4086-4E8D-902F-3A1AA368F39F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapps", "consoleapps", "{8F0DC733-4F0D-465A-A7BA-E3358E5A05BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDomain", "ConsoleAppTestDomain\ConsoleAppTestDomain.csproj", "{685004E9-DAC2-48DD-9C1C-38208F49147B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{672D1188-1A5A-450A-B7C7-A348F84C40B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDomein", "TestDomein\TestDomein.csproj", "{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "League.DL", "League.DL\League.DL.csproj", "{949B8297-E48D-429E-8C77-EDB6D65F6EF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppSpelerManager", "ConsoleAppSpelerManager\ConsoleAppSpelerManager.csproj", "{5DC70379-8273-4CB0-9704-8C3611136928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +27,30 @@ Global
 		{3D74E726-4086-4E8D-902F-3A1AA368F39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D74E726-4086-4E8D-902F-3A1AA368F39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D74E726-4086-4E8D-902F-3A1AA368F39F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685004E9-DAC2-48DD-9C1C-38208F49147B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685004E9-DAC2-48DD-9C1C-38208F49147B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685004E9-DAC2-48DD-9C1C-38208F49147B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685004E9-DAC2-48DD-9C1C-38208F49147B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949B8297-E48D-429E-8C77-EDB6D65F6EF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949B8297-E48D-429E-8C77-EDB6D65F6EF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949B8297-E48D-429E-8C77-EDB6D65F6EF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949B8297-E48D-429E-8C77-EDB6D65F6EF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC70379-8273-4CB0-9704-8C3611136928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC70379-8273-4CB0-9704-8C3611136928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC70379-8273-4CB0-9704-8C3611136928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC70379-8273-4CB0-9704-8C3611136928}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{685004E9-DAC2-48DD-9C1C-38208F49147B} = {8F0DC733-4F0D-465A-A7BA-E3358E5A05BA}
+		{5494AC6C-DF7C-407A-A0F2-8D51763C7A00} = {672D1188-1A5A-450A-B7C7-A348F84C40B7}
+		{5DC70379-8273-4CB0-9704-8C3611136928} = {8F0DC733-4F0D-465A-A7BA-E3358E5A05BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA31B2E0-68B5-45FC-B0BB-A4324EFDB396}
