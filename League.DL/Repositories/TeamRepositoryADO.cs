@@ -1,4 +1,5 @@
-﻿using League.BL.Interfaces;
+﻿using League.BL.DTO;
+using League.BL.Interfaces;
 using League.BL.Model;
 using League.DL.Exceptions;
 using System;
@@ -103,6 +104,51 @@ namespace League.DL.Repositories
                 {
                     throw new TeamRepositoryException("SelecteerTeam",ex);
                 }
+            }
+        }
+
+        public IReadOnlyList<TeamInfo> SelecteerTeams()
+        {
+            string sql = "SELECT stamnummer,naam,bijnaam FROM team";
+            List<TeamInfo> teams=new List<TeamInfo>();
+            using(SqlConnection connection=new SqlConnection(connectionString))
+            using(SqlCommand command=connection.CreateCommand())
+            {
+                try
+                {
+                    connection.Open();
+                    command.CommandText = sql;
+                    IDataReader reader=command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string bijnaam = null;
+                        if (!reader.IsDBNull(reader.GetOrdinal("bijnaam"))) bijnaam = (string)reader["bijnaam"];
+                        teams.Add(new TeamInfo((int)reader["stamnummer"], (string)reader["naam"],bijnaam));
+                    }
+                    reader.Close();
+                    return teams;
+                }
+                catch(Exception ex) { throw new TeamRepositoryException("selecteerteams", ex); }
+            }
+        }
+
+        public void UpdateTeam(Team team)
+        {
+            string sql = "UPDATE team SET naam=@naam,bijnaam=@bijnaam WHERE stamnummer=@stamnummer";
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            using(SqlCommand command = connection.CreateCommand())
+            {
+                try
+                {
+                    connection.Open();
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue("@stamnummer", team.Stamnummer);
+                    command.Parameters.AddWithValue("@naam", team.Naam);
+                    if (team.Bijnaam==null) command.Parameters.AddWithValue("@bijnaam",DBNull.Value);
+                    else command.Parameters.AddWithValue("@bijnaam",team.Bijnaam);
+                    command.ExecuteNonQuery();
+                }
+                catch(Exception ex) { throw new TeamRepositoryException("updateteam"); }
             }
         }
     }

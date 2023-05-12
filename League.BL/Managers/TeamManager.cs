@@ -1,4 +1,5 @@
-﻿using League.BL.Exceptions;
+﻿using League.BL.DTO;
+using League.BL.Exceptions;
 using League.BL.Interfaces;
 using League.BL.Model;
 using System;
@@ -49,6 +50,34 @@ namespace League.BL.Managers
             catch (Exception ex)
             {
                 throw new TeamManagerException("selecteerteam", ex);
+            }
+        }
+        public void UpdateTeam(Team  team)
+        {
+            if (team == null) throw new TeamManagerException("update team - team is null");
+            try
+            {
+                if (repo.BestaatTeam(team))
+                {
+                    repo.UpdateTeam(team);
+                }
+                else
+                {
+                    throw new TeamManagerException("update team");
+                }
+            }
+            catch(TeamManagerException) { throw; }
+            catch(Exception ex) { throw new TeamManagerException("Updateteam", ex); }
+        }
+        public IReadOnlyList<TeamInfo> SelecteerTeams()
+        {
+            try
+            {
+                return repo.SelecteerTeams();
+            }
+            catch(Exception e)
+            {
+                throw new TeamManagerException("selecteerteams", e);
             }
         }
     }
