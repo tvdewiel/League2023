@@ -58,6 +58,10 @@ namespace League.BL.Model
             if (string.IsNullOrWhiteSpace(naam)) throw new TeamException("ZetBijnaam");
             Bijnaam = naam.Trim();
         }
+        public void VerwijderBijnaam()
+        {
+            Bijnaam = null;
+        }
 
         public override bool Equals(object? obj)
         {

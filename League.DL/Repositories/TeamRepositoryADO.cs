@@ -20,7 +20,7 @@ namespace League.DL.Repositories
             this.connectionString = connectionString;
         }
 
-        public bool BestaatTeam(Team t)
+        public bool BestaatTeam(int stamnummer)
         {
             string sql = "select count(*) from team where stamnummer=@stamnummer";
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -30,7 +30,7 @@ namespace League.DL.Repositories
                 {
                     connection.Open();
                     cmd.CommandText = sql;
-                    cmd.Parameters.AddWithValue("@stamnummer", t.Stamnummer);
+                    cmd.Parameters.AddWithValue("@stamnummer", stamnummer);
                     int n = (int)cmd.ExecuteScalar();
                     if (n > 0) return true; else return false;
                 }
@@ -106,7 +106,6 @@ namespace League.DL.Repositories
                 }
             }
         }
-
         public IReadOnlyList<TeamInfo> SelecteerTeams()
         {
             string sql = "SELECT stamnummer,naam,bijnaam FROM team";
@@ -131,7 +130,6 @@ namespace League.DL.Repositories
                 catch(Exception ex) { throw new TeamRepositoryException("selecteerteams", ex); }
             }
         }
-
         public void UpdateTeam(Team team)
         {
             string sql = "UPDATE team SET naam=@naam,bijnaam=@bijnaam WHERE stamnummer=@stamnummer";

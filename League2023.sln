@@ -7,15 +7,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "League.BL", "League.BL\Leag
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "consoleapps", "consoleapps", "{8F0DC733-4F0D-465A-A7BA-E3358E5A05BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppTestDomain", "ConsoleAppTestDomain\ConsoleAppTestDomain.csproj", "{685004E9-DAC2-48DD-9C1C-38208F49147B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppTestDomain", "ConsoleAppTestDomain\ConsoleAppTestDomain.csproj", "{685004E9-DAC2-48DD-9C1C-38208F49147B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{672D1188-1A5A-450A-B7C7-A348F84C40B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDomein", "TestDomein\TestDomein.csproj", "{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestDomein", "TestDomein\TestDomein.csproj", "{5494AC6C-DF7C-407A-A0F2-8D51763C7A00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "League.DL", "League.DL\League.DL.csproj", "{949B8297-E48D-429E-8C77-EDB6D65F6EF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "League.DL", "League.DL\League.DL.csproj", "{949B8297-E48D-429E-8C77-EDB6D65F6EF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppSpelerManager", "ConsoleAppSpelerManager\ConsoleAppSpelerManager.csproj", "{5DC70379-8273-4CB0-9704-8C3611136928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppSpelerManager", "ConsoleAppSpelerManager\ConsoleAppSpelerManager.csproj", "{5DC70379-8273-4CB0-9704-8C3611136928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "League.UI", "League.UI\League.UI.csproj", "{97762AAF-105C-4D37-834A-72D0F0993D17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{5DC70379-8273-4CB0-9704-8C3611136928}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC70379-8273-4CB0-9704-8C3611136928}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC70379-8273-4CB0-9704-8C3611136928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97762AAF-105C-4D37-834A-72D0F0993D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97762AAF-105C-4D37-834A-72D0F0993D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97762AAF-105C-4D37-834A-72D0F0993D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97762AAF-105C-4D37-834A-72D0F0993D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

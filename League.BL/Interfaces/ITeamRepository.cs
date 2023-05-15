@@ -10,7 +10,8 @@ namespace League.BL.Interfaces
 {
     public interface ITeamRepository
     {
-        bool BestaatTeam(Team t);
+        //bool BestaatTeam(Team t);
+        bool BestaatTeam(int stamnummer);
         void SchrijfTeamInDB(Team t);
         Team SelecteerTeam(int stamnummer);
         IReadOnlyList<TeamInfo> SelecteerTeams();
